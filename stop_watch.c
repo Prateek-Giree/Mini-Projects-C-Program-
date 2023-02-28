@@ -31,7 +31,7 @@ void welcome()
     for (i = 0; text1[i] != 0; i++)
     {
         printf("%c", text1[i]);
-        Sleep(35); //Here Sleep function delay the execution of each  by 35 miliseconds simulation animation
+        Sleep(35); //Here Sleep function delay the execution of each character by 35 miliseconds simulation animation
     }
     gotoxy(50, 7);
     for (i = 0; text2[i] != 0; i++)
