@@ -56,7 +56,7 @@ void timer()
     {
         gotoxy(50, 11);
         printf("\e[1m%02d:%02d:%02d\n", hours, minutes, seconds);
-        Sleep(1000);
+        Sleep(1000); // 1000miliseconds=1 second
 
         // Increment seconds and minutes if necessary
         seconds++;
