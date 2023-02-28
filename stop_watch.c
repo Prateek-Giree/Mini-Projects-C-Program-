@@ -31,7 +31,7 @@ void welcome()
     for (i = 0; text1[i] != 0; i++)
     {
         printf("%c", text1[i]);
-        Sleep(35);
+        Sleep(35); //Here Sleep function delay the execution of each  by 35 miliseconds simulation animation
     }
     gotoxy(50, 7);
     for (i = 0; text2[i] != 0; i++)
@@ -56,7 +56,7 @@ void timer()
     {
         gotoxy(50, 11);
         printf("\e[1m%02d:%02d:%02d\n", hours, minutes, seconds);
-        Sleep(1000); // 1000miliseconds=1 second
+        Sleep(1000); //Sleep()takes argument in milisecond. 1000miliseconds=1 second
 
         // Increment seconds and minutes if necessary
         seconds++;
