@@ -11,6 +11,7 @@ void decrypt(char message[]);
 int i, c;
 void main()
 {
+    system("cls");
     welcome();
     char message[100];
     printf("Enter a message: ");
@@ -22,7 +23,7 @@ void main()
 
 void welcome()
 {
-    char text1[] = " \e[1m\e[4m******* Welcome to this program *******\n\n";
+    char text1[] = " \n\n\e[1m\e[4m******* Welcome to this program *******\n\n";
     char text2[] = "\e[1m\e[4mThis program is focused on encrypting the user given message...\n";
     char text3[] = "\e[1m\e[4m...and again decrypting it\n\n";
     char text4[] = "\e[1m\e[4mLets have a demo......\n\n\e[0m";
@@ -67,7 +68,13 @@ void encrypt(char text[]) // Encryption
         text[i] = c;
     }
 
-    printf("Encrypted message\n: %s", text);
+    char message[] = "\nDisplaying Encrypted message.........\n";
+    for (i = 0; message[i] != '\0'; i++)
+    {
+        printf("%c", message[i]);
+        Sleep(25);
+    }
+    printf("%s\n", text);
 }
 
 void decrypt(char text[]) // Decryption
@@ -92,12 +99,17 @@ void decrypt(char text[]) // Decryption
         }
         text[i] = c;
     }
-
-    printf("\nDecrypted message\n: %s", text);
+    char message[] = "\nDisplaying Decrypted message.........\n";
+    for (i = 0; message[i] != '\0'; i++)
+    {
+        printf("%c", message[i]);
+        Sleep(25);
+    }
+    printf("%s\n", text);
 }
 
-/*Breaking down the expression "c = 'a' + (c - 'a' + 4) % 26:- 'a' is the ASCII value of the lowercase letter a. This value is used 
-as a reference point to shift the input character c.  (c - 'a' + 4) calculates the index of the shifted character in the alphabet. 
-To do this, it first subtracts the ASCII value of a from the ASCII value of the input character c. This gives the index of the 
-input character in the alphabet (e.g., if c is 'c', then (c - 'a') will be 2, because 'c' is the third letter in the alphabet, 
+/*Breaking down the expression "c = 'a' + (c - 'a' + 4) % 26:- 'a' is the ASCII value of the lowercase letter a. This value is used
+as a reference point to shift the input character c.  (c - 'a' + 4) calculates the index of the shifted character in the alphabet.
+To do this, it first subtracts the ASCII value of a from the ASCII value of the input character c. This gives the index of the
+input character in the alphabet (e.g., if c is 'c', then (c - 'a') will be 2, because 'c' is the third letter in the alphabet,
 and a is the first letter). The expression then adds the shift value shift to this index to get the index of the shifted character in the alphabet."*/
