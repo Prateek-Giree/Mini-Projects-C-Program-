@@ -59,6 +59,7 @@ void main()
         break;
 
     case 4:
+        system("cls");
         transpose(); // calling function transpose()
         break;
 
@@ -74,7 +75,7 @@ void main()
 void welcome()
 {
     {
-        char text1[] = "************** Welcome to the matrix calculator ************";
+        char text1[] = "\e[1m\e[4m************** Welcome to the matrix calculator ************"; //\e[1m and \e[4m make text bold and draw underline respectively.
         char text2[] = "******** Perform calculation according to your need ********";
 
         gotoxy(50, 4); // Display above text1 in coordinate 50,4
@@ -99,7 +100,7 @@ void menu()
     char text2[] = "2. Matrix subtraction\n";
     char text3[] = "3. Matrix multiplication\n";
     char text4[] = "4. Matrix transpose\n";
-    char text5[] = "5. Exit\n\n";
+    char text5[] = "5. Exit\n\n\e[0m"; //\e[0m to make text normal again.
 
     gotoxy(50, 10);
     // Displaying text1 in animation
@@ -291,7 +292,7 @@ void multiplication() // This function perform multiplication
         {
             for (j = 0; j < col1; j++)
             {
-                printf("Enter element of matrix1[%d][%d]: ",i,j);
+                printf("Enter element of matrix1[%d][%d]: ", i, j);
                 scanf("%d", &matrix1[i][j]);
             }
         }
